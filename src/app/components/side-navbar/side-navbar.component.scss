@@ -1,0 +1,49 @@
+@import 'src/_variables.scss';
+
+.side-nav-container {
+    height: 100%;
+    background-color: $primary-blue;
+    padding: 10px 0px;
+    color: $color-light-font;
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+
+    &__img-container {
+        width: 90px;
+        height: auto;
+        margin-bottom: 10px;
+        
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    &__name {
+        font-weight: 500;
+    }
+
+    &__email {
+        font-size: 12px;
+    }
+}
+
+.side-nav {
+    &__items {
+        padding: 15px 0px 15px 50px;
+        cursor: pointer;
+        
+        &:hover {
+            background-color: $primary-blue-active;
+        }
+
+        &.active {
+            font-weight: 500;
+            background-color: $primary-blue-active;
+        }
+    }
+}
