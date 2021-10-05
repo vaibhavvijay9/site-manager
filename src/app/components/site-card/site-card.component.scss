@@ -1,0 +1,25 @@
+@import 'src/_variables.scss';
+
+.grid-view {
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr 1fr 1fr;
+    align-items: center;
+}
+
+.card {
+    background-color: $color-light-font;
+    padding: 6px 30px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.site {
+    &__name {
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+    &__plan {
+        display: flex;
+        align-items: center;
+    }
+}

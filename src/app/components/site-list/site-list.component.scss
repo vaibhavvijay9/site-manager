@@ -1,0 +1,90 @@
+@import 'src/_variables.scss';
+
+main {
+    background-color: $light-blue;
+    height: 100%;
+}
+
+.list {
+    width: 950px;
+    margin: 0 auto;
+    padding: 30px 50px;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        margin-bottom: 20px;
+
+        &-title{
+            font-size: 26px;
+            font-weight: 500;
+        }
+
+        &-btn {
+            background-color: $primary-blue-active;;
+            outline: unset;
+            border: none;
+            border-radius: 4px;
+            color: $color-light-font;
+            width: 120px;
+            cursor: pointer;
+        }
+    }
+}
+
+.form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.select-container {
+    margin-right: 5px;
+}
+
+.form-label {
+    padding: 0 5px;
+}
+
+.form-select {
+    width: 50px;
+    background-color: transparent;
+    border-color: $color-2;
+    color: $primary-blue;
+    padding: 3px;
+    border-radius: 2px;
+
+    &:focus{
+        outline: none;
+    }
+}
+
+.search-container {
+    position: relative;
+
+    &__icon{
+        position: absolute;
+        top: 7px;
+        width: 14px;
+    }
+}
+
+.form-input {
+    background-color: transparent;
+    border: unset;
+    padding: 7px 18px;
+    outline: none;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr 1fr 1fr;
+    background-color: $color-7;
+    padding: 10px 30px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+
+    &__name {
+        color: $color-1;
+    }
+}

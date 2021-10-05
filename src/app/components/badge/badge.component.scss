@@ -1,0 +1,18 @@
+@import 'src/_variables.scss';
+
+.badge {
+    padding: 5px;
+    border-radius: 4px;
+    width: 70px;
+    text-align: center;
+}
+
+.active {
+    background-color: $light-green;
+    color: $primary-green;
+}
+
+.inactive {
+    background-color: $light-orange;
+    color: $primary-orange;
+}

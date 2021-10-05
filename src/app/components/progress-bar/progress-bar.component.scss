@@ -1,0 +1,21 @@
+@import 'src/_variables.scss';
+
+.progress-bar {
+    background: $color-4;
+    border-radius: 4px;
+    height: 15px;
+    width: 120px;
+    position: relative;
+    margin-bottom: 5px;
+
+    &__value {
+        background: $primary-green;
+        border-radius: 4px;
+        height: 100%;
+        position:absolute;
+    }
+}
+
+.progress-label {
+    font-size: 12px;
+}

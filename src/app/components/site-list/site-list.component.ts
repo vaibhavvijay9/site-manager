@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { DataService } from '../../services/data.service';
 @Component({
   selector: 'site-list',
   templateUrl: './site-list.component.html',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SiteListComponent implements OnInit {
 
-  constructor() { }
+  sitesList: any;
+
+  constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
+    this.dataService.getAllData().subscribe(response => {
+      this.sitesList = response;
+    })
   }
 
 }

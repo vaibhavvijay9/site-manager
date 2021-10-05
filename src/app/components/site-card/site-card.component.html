@@ -1,1 +1,13 @@
-<p>site-card works!</p>
+<div class="grid-view card">
+    <div>
+        <p class="site__name">{{siteData.domain}}</p>
+        <span class="site__plan">
+            <img src="assets/plan.jpg" alt="Plan" style="margin-right: 5px;">
+            Professional Plan
+        </span>
+    </div>
+    <progress-bar [inputType]="'STRING'" [consumed]="siteData.usedStorage" [total]="siteData.storage"></progress-bar>
+    <progress-bar [inputType]="'NUMBER'" [consumed]="siteData.montlyVisitor" [total]="siteData.monthlyVisitorCapacity"></progress-bar>
+    <doughnut-chart></doughnut-chart>
+    <badge *ngIf="siteData.status" [status]="siteData.status"></badge>
+</div>

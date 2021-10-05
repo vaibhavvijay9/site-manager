@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'site-card',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./site-card.component.scss']
 })
 export class SiteCardComponent implements OnInit {
+
+  @Input() siteData: any;
 
   constructor() { }
 
