@@ -1,6 +1,8 @@
 # SiteManager
 
-This project is developed as a part of assignment.
+### [Live Demo](https://site-manager-app.netlify.app/)
+
+This project is developed as a part of assignment. It's backend that uses json-server is [here](https://github.com/vaibhavvijay9/site-manager-data) and hosted at Heroku.
 
 ## Libraries Used
 - Angular 12
@@ -22,4 +24,4 @@ Please visit [https://site-manager-app.netlify.app/](https://site-manager-app.ne
 
 ## Areas for Improvement
 
-- Improve design implementation
+- Improve design implementation and make it responsive.
