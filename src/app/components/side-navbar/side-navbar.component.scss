@@ -4,7 +4,7 @@
     height: 100%;
     background-color: $primary-blue;
     padding: 10px 0px;
-    color: $color-light-font;
+    color: $color-border;
 }
 
 .user-profile {
@@ -25,6 +25,7 @@
 
     &__name {
         font-weight: 500;
+        color: $color-light-font;
     }
 
     &__email {
@@ -36,6 +37,8 @@
     &__items {
         padding: 15px 0px 15px 50px;
         cursor: pointer;
+        display: flex;
+        align-items: center;
         
         &:hover {
             background-color: $primary-blue-active;
@@ -44,6 +47,16 @@
         &.active {
             font-weight: 500;
             background-color: $primary-blue-active;
+            color: $color-light-font;
+            
+            .side-nav__items-icon {
+                filter: opacity(1);
+            }
+        }
+
+        &-icon {
+            margin-right: 15px;
+            filter: opacity(0.5);
         }
     }
 }
