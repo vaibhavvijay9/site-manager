@@ -9,11 +9,16 @@
 }
 
 .active {
-    background-color: $light-green;
-    color: $primary-green;
+    background-color: $light-blue;
+    color: $primary-blue;
 }
 
-.inactive, .add-on {
+.inactive {
+    background-color: $light-pink;
+    color: $primary-red;
+}
+
+.add-on {
     background-color: $light-orange;
     color: $primary-orange;
 }
