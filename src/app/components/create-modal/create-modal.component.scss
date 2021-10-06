@@ -54,9 +54,10 @@
 
 .form-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: min-content;
+    grid-template-columns: 300px 300px;
+    align-content: flex-start;
     grid-gap: 15px;
+    grid-column-gap: 50px;
 }
 
 .form-element{
@@ -116,9 +117,7 @@
     background-color: $color-white;
     border: 1px solid $color-dark-font;
     border-radius: 4px;
-
-    position: absolute;
-    right: 70px;
+    float: right;
 }
 
 .multi-input {
