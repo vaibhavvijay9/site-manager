@@ -8,6 +8,6 @@
     </div>
     <progress-bar [inputType]="'STRING'" [consumed]="siteData.usedStorage" [total]="siteData.storage"></progress-bar>
     <progress-bar [inputType]="'NUMBER'" [consumed]="siteData.montlyVisitor" [total]="siteData.monthlyVisitorCapacity"></progress-bar>
-    <doughnut-chart></doughnut-chart>
+    <doughnut-chart [inputType]="'NUMBER'" [consumed]="siteData.usedDomains" [total]="siteData.availableDomains"></doughnut-chart>
     <badge *ngIf="siteData.status" [status]="siteData.status"></badge>
 </div>

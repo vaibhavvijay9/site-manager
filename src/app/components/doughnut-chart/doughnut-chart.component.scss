@@ -1,106 +1,34 @@
 @import 'src/_variables.scss';
 
-$bg-color: $primary-blue-active;
-$default-size: 0.4em;
-$label-font-size: $default-size / 4;
-$label-font-size-redo: $default-size * 4;
-// -- mixins
-@mixin size($width, $height) {
-  height: $height;
-  width: $width;
-}
-
-@mixin draw-progress($progress, $color) {
-  .pie {
-    .half-circle {
-      border-color: $color;
-    }
-
-    .left-side {
-      transform: rotate($progress * 3.6deg);
-    }
-
-    @if $progress <= 50 {
-      .right-side {
-        display: none;
-      }
-    } @else {
-      clip: rect(auto, auto, auto, auto);
-
-      .right-side {
-        transform: rotate(180deg);
-      }
-    }
-  }
-}
-
-// -- selectors
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-.set-size {
-  font-size: 10em;
-  width: var(--value);
-}
-
-
-.pie-wrapper {
-  @include size($default-size, $default-size);
-  float: left;
-  margin: 8px;
+.RadialProgress {
+  --hue: 220;
+  --holesize: 62%;
+  
+  block-size: 50px;
+  inline-size: 50px;
+  min-inline-size: 60px;
+  min-block-size: 60px;
+  display: grid;
+  place-items: center;
   position: relative;
- 
-  .pie {
-    @include size(100%, 100%);
-    clip: rect(0, $default-size, $default-size, $default-size / 2);
-    left: 0;
+  color: $primary-blue;
+  
+  &::before {
+    content: '';
     position: absolute;
     top: 0;
-
-    .half-circle {
-      @include size(100%, 100%);
-      border: ($default-size / 15) solid #3498db;   //
-      border-radius: 50%;
-      clip: rect(0, $default-size / 2, $default-size, 0);
-      left: 0;
-      position: absolute;
-      top: 0;
-    }
-  }
-
-  .label {
+    bottom: 0;
+    left: 0;
+    right: 0;
     border-radius: 50%;
-    bottom: $label-font-size-redo / 10;
-    color: $primary-blue;
-    cursor: default;
-    display: block;
-    font-size: $label-font-size;
-    line-height: $label-font-size-redo * .70;
-    position: absolute;
-    // right: $label-font-size-redo / 10;
-    right: 1.16em;
-    text-align: center;
-    // top: $label-font-size-redo / 10;
-    top: 1.4em;
-
-    .smaller {
-      color: #bdc3c7;
-      font-size: .45em;
-      padding-bottom: 20px;
-      vertical-align: middle;
-    }
-  }
-
-  .shadow {
-    @include size(100%, 100%);
-    border: $default-size / 15 solid $light-blue; //
-    border-radius: 50%;
-  }
-  
-  &.progress-45 {
-    @include draw-progress(40, $primary-blue-active);
+    background: conic-gradient(
+      $primary-blue var(--progress, 0%),
+      $color-5 var(--progress, 0%) 100%
+    );
+    
+    mask-image: radial-gradient(
+      transparent var(--holesize),
+      black calc(var(--holesize) + 0.5px)
+    );
   }
 }
