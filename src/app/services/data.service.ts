@@ -7,7 +7,7 @@ import { Observable, Subject } from 'rxjs';
 })
 export class DataService {
 
-  baseUrl: string = "http://localhost:3000/domainList";
+  baseUrl: string = "https://infinite-waters-25224.herokuapp.com";
   sitesList: any;
 
   httpHeaders = new HttpHeaders({
@@ -31,12 +31,12 @@ export class DataService {
     if(options && options.searchTerm)
       data['domain'] = options.searchTerm;
     
-    return this.http.get<any>(this.baseUrl, {params: data, headers: this.httpHeaders});
+    return this.http.get<any>(this.baseUrl+'/domainList', {params: data, headers: this.httpHeaders});
   }
 
 
   addData(data: any) {
-    return this.http.post<any>(this.baseUrl, data, this.httpOptions);
+    return this.http.post<any>(this.baseUrl+'/domainList', data, this.httpOptions);
   }
   
   
