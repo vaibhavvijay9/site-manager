@@ -1,3 +1,7 @@
-<div class="badge" [ngClass]="{'active': status === 'Active', 'inactive': status === 'Inactive'}">
+<div class="badge" 
+    [ngClass]="{'active': status === 'Active', 
+        'inactive': status === 'Inactive',
+        'add-on': status === 'Add On',
+        'staging': status === 'Staging'}">
     {{status}}
 </div>

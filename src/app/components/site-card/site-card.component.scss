@@ -8,9 +8,26 @@
 
 .card {
     background-color: $color-light-font;
-    padding: 6px 30px;
+    padding: 15px 30px;
     border-radius: 4px;
-    margin-bottom: 10px;
+    border: 1px solid $color-4;
+}
+
+.card-with-subdomain {
+    border-bottom-left-radius: unset;
+    border-bottom-right-radius: unset;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+.subdomain-card-container {
+    background-color: $color-7;
+    margin-bottom: 15px;
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
+}
+
+.subdomain-card {
+    padding: 10px 0;
 }
 
 .site {

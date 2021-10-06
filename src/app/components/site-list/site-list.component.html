@@ -2,23 +2,24 @@
     <section class="list">
         <div class="list__header">
             <h1 class="list__header-title">Site Details</h1>
-            <button class="list__header-btn">+ Add New Site</button>
+            <button class="list__header-btn" (click)="openModal()">+ Add New Site</button>
         </div>
 
         <div class="form">
             <div class="select-container">
                 <label class="form-label">Show</label>
-                <select name="recordsCount" id="" class="form-select">
+                <select name="recordsCount" [(ngModel)]="recordsCount" (change)="loadData()" class="form-select">
+                    <option value="5">5</option>
                     <option value="10">10</option>
                     <option value="20">20</option>
                     <option value="50">50</option>
-                    <option value="'ALL'">All</option>
+                    <option value="ALL">All</option>
                 </select>
                 <label class="form-label">Entries</label>
             </div>
             <div class="search-container">
                 <img src="assets/search.svg" alt="Search Icon" class="search-container__icon">
-                <input type="text" placeholder="Search records" class="form-input">
+                <input type="text" [(ngModel)]="searchText" (ngModelChange)="this.searchFilter.next($event)" placeholder="Search domain name here" class="form-input">
             </div>
         </div>
 
@@ -37,3 +38,5 @@
         </div>
     </section>
 </main>
+
+<app-create-modal (dataUpdated)="refreshList($event)"></app-create-modal>

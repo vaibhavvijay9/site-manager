@@ -1,4 +1,6 @@
-<div class="grid-view card">
+<div class="grid-view card" 
+    [class.card-with-subdomain]="siteData.subdomain.length > 0"
+    [ngStyle]="{'margin-bottom': siteData.subdomain.length == 0 ? '15px' : '0'}">
     <div>
         <p class="site__name">{{siteData.domain}}</p>
         <span class="site__plan">
@@ -10,4 +12,13 @@
     <progress-bar [inputType]="'NUMBER'" [consumed]="siteData.montlyVisitor" [total]="siteData.monthlyVisitorCapacity"></progress-bar>
     <doughnut-chart [inputType]="'NUMBER'" [consumed]="siteData.usedDomains" [total]="siteData.availableDomains"></doughnut-chart>
     <badge *ngIf="siteData.status" [status]="siteData.status"></badge>
+</div>
+
+<div class="card subdomain-card-container" *ngIf="siteData.subdomain && siteData.subdomain.length > 0">
+    <div class="grid-view subdomain-card" *ngFor="let subdomain of siteData.subdomain">
+        <div>{{subdomain.name}}</div>
+        <div>{{subdomain.usedStorage ? (subdomain.usedStorage | uppercase) : '-'}}</div>
+        <div>{{subdomain.montlyVisitor ? subdomain.montlyVisitor : '-'}}</div>
+        <badge *ngIf="subdomain.domainTag" [status]="subdomain.domainTag"></badge>
+    </div>
 </div>

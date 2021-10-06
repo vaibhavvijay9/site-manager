@@ -1,0 +1,60 @@
+<div class="modal" #modalRef>
+    <div class="modal-body">
+        <div class="modal-header">
+            <h1 class="modal-header__title">Add Domain Details</h1>
+            <span class="close" (click)="closeModal()">&times;</span>
+        </div>
+      
+        <form [formGroup]="addDataForm" (ngSubmit)="onSubmit()">
+            <div class="modal-content form-container">
+                <div class="form-element">
+                    <label class="form-element__label">Domain Name</label>
+                    <div class="form-element__input-container">
+                        <input type="text" formControlName="domainName" [ngClass]="{ 'is-invalid': submitted && f.domainName.errors }"/>
+                        <div *ngIf="submitted && f.domainName.errors" class="form-element__error">
+                            <small *ngIf="f.domainName.errors.required">Required</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-element">
+                    <label class="form-element__label">Storage</label>
+                    <div class="form-element__input-container">
+                        <input type="text" formControlName="storage" [ngClass]="{ 'is-invalid': submitted && f.storage.errors }"/>
+                        <div *ngIf="submitted && f.storage.errors" class="form-element__error">
+                            <small *ngIf="f.storage.errors.required">Required</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="position: relative;">
+                    <div class="form-element">
+                        <label class="form-element__label">Subdomain</label>
+                        <ng-container formArrayName="subdomains">
+                            <div *ngFor="let subdomain of subdomains.controls; index as i; first as f" class="form-element__input-container multi-input">
+                                <input type="text" [formControlName]="i"/>
+                                <span *ngIf="!f" class="close delete-icon" (click)="removeSubdomainRow(i)">&times;</span>
+                            </div>
+                        </ng-container>
+                    </div>
+                    <button type="button" (click)="addSubdomainRow()" class="add-more-btn">Add More</button>
+                </div>
+                
+                <div class="form-element">
+                    <label class="form-element__label">Monthly Visitor*</label>
+                    <div class="form-element__input-container">
+                        <input type="number" formControlName="monthlyVisitor" [ngClass]="{ 'is-invalid': submitted && f.monthlyVisitor.errors }"/>
+                        <div *ngIf="submitted && f.monthlyVisitor.errors" class="form-element__error">
+                            <small *ngIf="f.monthlyVisitor.errors.required">Required</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" (click)="closeModal()" class="close-btn">Close</button>
+                <button class="save-btn">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>

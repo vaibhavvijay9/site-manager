@@ -11,6 +11,9 @@ import { BadgeComponent } from './components/badge/badge.component';
 import { DoughnutChartComponent } from './components/doughnut-chart/doughnut-chart.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { CreateModalComponent } from './components/create-modal/create-modal.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,12 +22,15 @@ import { HttpClientModule } from '@angular/common/http';
     SiteCardComponent,
     ProgressBarComponent,
     BadgeComponent,
-    DoughnutChartComponent
+    DoughnutChartComponent,
+    CreateModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

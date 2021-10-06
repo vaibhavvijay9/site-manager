@@ -3,8 +3,9 @@
 .badge {
     padding: 5px;
     border-radius: 4px;
-    width: 70px;
+    width: 60px;
     text-align: center;
+    font-size: 12px;
 }
 
 .active {
@@ -12,7 +13,12 @@
     color: $primary-green;
 }
 
-.inactive {
+.inactive, .add-on {
     background-color: $light-orange;
     color: $primary-orange;
+}
+
+.staging {
+    background-color: $light-purple;
+    color: $primary-purple;
 }
